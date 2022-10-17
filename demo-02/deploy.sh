@@ -1,7 +1,7 @@
 # Variable declaration
-$RESOURCE_GROUP="azure-container-apps-demo-02"
+$RESOURCE_GROUP="azure-container-apps-demo"
 $LOCATION="westeurope"
-$CONTAINERAPPS_ENVIRONMENT="containerapps-env"
+$CONTAINERAPPS_ENVIRONMENT="containerapps-env-demo"
 $STORAGE_ACCOUNT_CONTAINER="mycontainer"
 $STORAGE_ACCOUNT="containerappsdemo02"
 
@@ -30,10 +30,5 @@ az deployment group create `
       location="$LOCATION" `
       storage_account_name="$STORAGE_ACCOUNT" `
       storage_container_name="$STORAGE_ACCOUNT_CONTAINER"
-
-# Retrieve nodeapp logs from Log Analytics
-$LOG_ANALYTICS_WORKSPACE_CLIENT_ID=(az containerapp env show --name $CONTAINERAPPS_ENVIRONMENT --resource-group $RESOURCE_GROUP --query properties.appLogsConfiguration.logAnalyticsConfiguration.customerId --out tsv)
-$queryResults = Invoke-AzOperationalInsightsQuery -WorkspaceId $LOG_ANALYTICS_WORKSPACE_CLIENT_ID -Query "ContainerAppConsoleLogs_CL | where ContainerAppName_s == 'nodeapp' and (Log_s contains 'persisted' or Log_s contains 'order') | project ContainerAppName_s, Log_s, TimeGenerated | take 5"
-$queryResults.Results
 
 az group delete --resource-group $RESOURCE_GROUP --yes

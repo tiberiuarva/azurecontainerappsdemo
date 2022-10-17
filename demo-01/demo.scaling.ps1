@@ -1,2 +1,2 @@
-$URL = "album-ui.politehill-a6f8d04d.westeurope.azurecontainerapps.io"
-1..50 | ForEach-Object { Invoke-RestMethod -Uri $URL -Method Get;}
+$URL = "https://album-api.wittysand-a096dd60.westeurope.azurecontainerapps.io/albums"
+1..100 | ForEach-Object { Invoke-RestMethod -Uri $URL -Method Get;}

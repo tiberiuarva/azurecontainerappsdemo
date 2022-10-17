@@ -3,7 +3,7 @@ param location string = 'canadacentral'
 param storage_account_name string
 param storage_container_name string
 
-var logAnalyticsWorkspaceName = 'logs-${environment_name}'
+var logAnalyticsWorkspaceName = 'acaalbumslaw01'
 var appInsightsName = 'appins-${environment_name}'
 
 resource logAnalyticsWorkspace'Microsoft.OperationalInsights/workspaces@2021-06-01' = {

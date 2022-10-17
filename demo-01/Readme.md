@@ -4,6 +4,8 @@
 
 Demo 1 showcases the communication between two microservices in Azure Container Apps. The solution is composed of 2 Applications. The frontend application represents the User Interface and the backend application is the backend API of the solution. The frontend makes a direct service call to the backend API.
 
+![Demo 1](./img/demo1-comms-between-2-microservices-autoscaling.jpg)
+
 ## Components
 
 - Frontend UI

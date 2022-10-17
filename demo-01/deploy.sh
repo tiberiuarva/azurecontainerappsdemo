@@ -1,7 +1,7 @@
 # Variable declaration
-RESOURCE_GROUP="azure-container-apps-demo-01"
+RESOURCE_GROUP="azure-container-apps-demo"
 LOCATION="westeurope"
-ENVIRONMENT="env-album-containerapps"
+ENVIRONMENT="containerapps-env-demo"
 API_NAME="album-api"
 FRONTEND_NAME="album-ui"
 GITHUB_USERNAME="tiberiuarva"
