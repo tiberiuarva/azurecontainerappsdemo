@@ -21,12 +21,10 @@ az storage account create `
   --sku Standard_RAGRS `
   --kind StorageV2
 
-cd ./demo-02
-
 # Deploy the Bicep template
 az deployment group create `
   --resource-group "$RESOURCE_GROUP" `
-  --template-file ./azuredeploy.bicep `
+  --template-file ./demo-02/azuredeploy.bicep `
   --parameters `
       environment_name="$CONTAINERAPPS_ENVIRONMENT" `
       location="$LOCATION" `
